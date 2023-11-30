@@ -120,8 +120,7 @@ header{
 #tabela{
     margin: 10px 15px;
     border-collapse: collapse;
-    width: 97%;
-    
+    width: 97%;  
 }
 
 td {
@@ -138,8 +137,14 @@ th{
     padding: 4px;
 }
 
-#tabela tr.verde{
+
+#tabela tr td.verde{
     background-color: darkseagreen;
+    font-weight: bold;
+}
+
+#tabela tr.fim{
+    background-color: lightgreen;
     font-weight: bold;
 }
 
@@ -148,5 +153,6 @@ th{
     font-weight: bold;
 }
 
-
-
+#tabela tr.td.lugar.verde{
+    background-color: green;
+}

@@ -201,9 +201,10 @@ function ConfereLexema(input, entrada, acao){
     if(entrada || acao == 32 || acao == 8 || acao == 46){
         if(palavras.length > 0){
             //Limpa CSS linhas
-            $("#tabela tr").removeClass('verde');
+            $("#tabela tr td").removeClass('verde');
             $("#tabela tr").removeClass('vermelho');
             $("#tabela tr").removeClass('currentetapa');
+            $("#tabela tr").removeClass('fim');
 
             let currentEtapa = 0;
             let erro = false;
@@ -215,9 +216,10 @@ function ConfereLexema(input, entrada, acao){
                     //Se está dentro do alfabeto
                     if(letra.charCodeAt(0) >= Primeiraletra.charCodeAt(0) && letra.charCodeAt(0) <= Ultimaletra.charCodeAt(0)){
                         if(alfabeto[currentEtapa][letra] != ' '){
-                            $("#tabela td").removeClass('currentetapa');
-                            $(`.step_${currentEtapa}`).addClass('verde');
+                            $("#tabela tr").removeClass('currentetapa');
+                            $(`.step_${currentEtapa} td.lugar`).addClass('verde');
                             $(`.step_${currentEtapa}`).addClass('currentetapa');
+                            $(`.currentetapa td:first-child`).addClass('verde');
                             currentEtapa = alfabeto[currentEtapa][letra];
                         } else {
                             erro = true;
@@ -229,8 +231,8 @@ function ConfereLexema(input, entrada, acao){
                     if(acao == 32){
                         if(i == entrada.length-1){
                             if(alfabeto[currentEtapa]['end']){
-                                $("#tabela td").removeClass('currentetapa');
-                                $(`.step_${currentEtapa}`).addClass('verde');
+                                $("#tabela tr").removeClass('currentetapa');
+                                $(`.step_${currentEtapa}`).addClass('fim');
                                 $(`.step_${currentEtapa}`).addClass('currentetapa');
                             } else {
                                 erro = true;
