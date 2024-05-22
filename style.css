@@ -126,7 +126,8 @@ header{
 td {
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
-    padding: 4px;
+    width: 20px;
+    height: 20px;
     text-align: center;
     font-size: 17px;
 }
